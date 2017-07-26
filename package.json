@@ -4,6 +4,7 @@
   "description": "Sample project for jsGrid with Node.js Express REST service",
   "private": true,
   "scripts": {
+    "prepublish": "zip -r target/Fha-UI-Microservice-dist.zip node_modules bin db public routes views *.js",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -20,3 +21,4 @@
     "node": "4.4.7"
   }
 }
+4
