@@ -1,15 +1,38 @@
+/*
 $(function() {
 
-    var countries = [
-        { Name: "", Id: 0 },
-        { Name: "United States", Id: 1 },
-        { Name: "Canada", Id: 2 },
-        { Name: "United Kingdom", Id: 3 },
-        { Name: "France", Id: 4 },
-        { Name: "Brazil", Id: 5 },
-        { Name: "China", Id: 6 },
-        { Name: "Russia", Id: 7 }
-    ];
+//    var countries = [
+//        { Name: "", Id: 0 },
+//        { Name: "United States", Id: 1 },
+//        { Name: "Canada", Id: 2 },
+//        { Name: "United Kingdom", Id: 3 },
+//        { Name: "France", Id: 4 },
+//        { Name: "Brazil", Id: 5 },
+//        { Name: "China", Id: 6 },
+//        { Name: "Russia", Id: 7 }
+//    ];
+    var data = [
+  {
+    "Property State": "Otto Clay",
+    "Property City": 61,
+    "Property Country": 6,
+    "Property Zip": "Ap #897-1459 Quam Avenue",
+    "Origination Mortgagee/Sponsor Originator": false,
+    "Originating Mortgagee Number": "jhgfd",
+    "Sponsor Name": "gffdgkhdhf",
+    "Sponsor Number": "gfgsdfj",
+    "Down Payment Source":"jhgshrhghdfh",
+    "Non Profit Number":"hfhsdkfhskhf",
+    "Product Type": "gdsfgfg",
+    "Loan Purpose": "sgdskfd",
+    "Property Type": "gdgdfd",
+    "Interest Rate": "ghssg",
+    "Original Mortgage Amount":"hsgskg",
+    "Endorsement Year": "ggfdsgdkgkf",
+    "Endorsement Month": "khfssdd"
+      
+  }
+];
 
     $("#jsGrid").jsGrid({
         height: "70%",
@@ -22,7 +45,7 @@ $(function() {
         autoload: true,
         pageSize: 10,
         pageButtonCount: 5,
-        deleteConfirm: "Do you really want to delete client?",
+        deleteConfirm: "Do you really want to delete?",
         controller: {
             loadData: function(filter) {
                 return $.ajax({
@@ -30,39 +53,330 @@ $(function() {
                     url: "/clients",
                     data: filter
                 });
-            },
-            insertItem: function(item) {
-                return $.ajax({
-                    type: "POST",
-                    url: "/clients",
-                    data: item
-                });
-            },
-            updateItem: function(item) {
-                return $.ajax({
-                    type: "PUT",
-                    url: "/clients",
-                    data: item
-                });
-            },
-            deleteItem: function(item) {
-                return $.ajax({
-                    type: "DELETE",
-                    url: "/clients",
-                    data: item
-                });
             }
+//            insertItem: function(item) {
+//                return $.ajax({
+//                    type: "POST",
+//                    url: "/clients",
+//                    data: item
+//                });
+//            },
+//            updateItem: function(item) {
+//                return $.ajax({
+//                    type: "PUT",
+//                    url: "/clients",
+//                    data: item
+//                });
+//            },
+//            deleteItem: function(item) {
+//                return $.ajax({
+//                    type: "DELETE",
+//                    url: "/clients",
+//                    data: item
+//                });
+//            }
         },
         fields: [
-            { name: "Name", type: "text", width: 150 },
-            { name: "Age", type: "number", width: 50, filtering: false },
-            { name: "Address", type: "text", width: 200 },
-            { name: "Country", type: "select", items: countries, valueField: "Id", textField: "Name" },
-            { name: "Married", type: "checkbox", title: "Is Married", sorting: false },
+            { name: "Property State", type: "text", width: 50 },
+            { name: "Property City", type: "text", width: 50, filtering: false },
+            { name: "Property Country", type: "text", width: 50 },
+            { name: "Property Zip", type: "text", width: 50 },
+            { name: "Org. Mortgagee", type: "text", width: 50 },
+            { name: "Org. Mortgagee Number", type: "text", width: 50 },
+            { name: "Sponsor Name", type: "text", width: 50 },
+            { name: "Sponsor Number", type: "text", width: 50 },
+            { name: "Down Payment Source", type: "text", width: 50 },
+            { name: "Product Type", type: "text", width: 50 },
+            { name: "Loan Purpose", type: "text", width: 50 },
+            { name: "Property Type", type: "text", width: 50 },
+            { name: "Interest Rate", type: "text", width: 50 },
+            { name: "Original Mortgage Amount", type: "text", width: 50 },
+//            { name: "Country", type: "select", items: countries, valueField: "Id", textField: "Name" },
+//            { name: "Married", type: "checkbox", title: "Is Married", sorting: false },
             { type: "control" }
         ]
     });
     
 });
 
+            { name: "Property State", type: "text"},
+            { name: "Property City", type: "text" },
+            { name: "Property Country", type: "text" },
+            { name: "Property Zip", type: "text"},
+            { name: "Org. Mortgagee", type: "text" },
+            { name: "Org. Mortgagee Number", type: "text" },
+            { name: "Sponsor Name", type: "text" },
+            { name: "Sponsor Number", type: "text" },
+            { name: "Down Payment Source", type: "text" },
+            { name: "Product Type", type: "text" },
+            { name: "Loan Purpose", type: "text" },
+            { name: "Property Type", type: "text" },
+            { name: "Interest Rate", type: "text" },
+            { name: "Original Mortgage Amount", type: "text" }
 
+*/
+        $.jgrid = $.jgrid || {};
+        $.jgrid.no_legacy_api = true;
+        $.jgrid.useJSON = true;
+
+//        $(function () {
+//            "use strict";
+//            var $grid = $("#list"),
+//                gridData,
+//                startTime,
+//                measureTime = false,
+//                timeInterval;
+//
+//            var date = new Date(), t = Object.prototype.toString.call(date), t1 = String(date);
+//
+//            //alert("start to generate the data");
+//            //gridData = getGridData(4000);
+//            //alert("start to fill the grid")
+//            startTime = new Date();
+//            $grid.jqGrid({
+//            url: '/clients',
+//            colModel: [
+//            { name: "Property State", type: "text"},
+//            { name: "Property City", type: "text" },
+//            { name: "Property Country", type: "text" },
+//            { name: "Property Zip", type: "text"},
+//            { name: "Org. Mortgagee", type: "text" },
+//            { name: "Org. Mortgagee Number", type: "text" },
+//            { name: "Sponsor Name", type: "text" },
+//            { name: "Sponsor Number", type: "text" },
+//            { name: "Down Payment Source", type: "text" },
+//            { name: "Product Type", type: "text" },
+//            { name: "Loan Purpose", type: "text" },
+//            { name: "Property Type", type: "text" },
+//            { name: "Interest Rate", type: "text" },
+//            { name: "Original Mortgage Amount", type: "text" }
+//                ],
+//                cmTemplate: { width: 100, autoResizable: true },
+//                rowNum: 20,
+//                rownumWidth: 40,
+//                rowList: [20, 100, 1000, 10000, "100000:All"],
+//                viewrecords: true,
+//                rownumbers: true,
+//                toppager: true,
+//                pager: true,
+//                shrinkToFit: false,
+//                autoencode: true,
+//                caption: "Shows the performance of resizing. Make double-click on the column resizer"
+//             }).jqGrid("filterToolbar", {
+//                    beforeSearch: function () {
+//                        startTime = new Date();
+//                        measureTime = true;
+//                        return false; // allow filtering
+//                    }
+//             }).jqGrid("gridResize");
+//        });
+
+
+$(function() {
+
+	$.extend($.jgrid.defaults, {
+				datatype: 'json',
+				jsonReader : {
+					repeatitems:false,
+					id: "id", 
+					root: function(obj) { return obj; },
+					total: function(result) {
+						//Total number of pages
+						return Math.ceil(result.total / result.max);
+					},
+					records: function(result) {
+						//Total number of records
+						return result.total;
+					}
+				},
+				prmNames: {
+					page: "page.page",
+					rows: "page.size",
+					sort: "page.sort",
+					order: "page.sort.dir"
+				},
+				sortname: 'title',
+				sortorder: 'asc',
+				height: 'auto',
+				viewrecords: true,
+				rowList: [10, 20, 50, 100],
+				altRows: true,
+				loadError: function(xhr, status, error) {
+					alert(error);
+				}
+			});
+
+	$.extend($.jgrid.edit, {
+				closeAfterEdit: true,
+				closeAfterAdd: true,
+				ajaxEditOptions: { contentType: "application/json" },
+				mtype: 'PUT',
+				serializeEditData: function(data) {
+					delete data.oper;
+					return JSON.stringify(data);
+				}
+			});
+	$.extend($.jgrid.del, {
+				mtype: 'DELETE',
+				serializeDelData: function() {
+					return "";
+				}
+			});
+
+	var editOptions = {
+		onclickSubmit: function(params, postdata) {
+			params.url = URL + '/' + postdata.id;
+		}
+	};
+	var addOptions = {mtype: "POST"};
+	var delOptions = {
+		onclickSubmit: function(params, postdata) {
+			params.url = URL + '/' + postdata;
+		}
+	};
+
+	var URL = '/clients';
+	var options = {
+		url: URL,
+		editurl: URL,
+		colModel:[
+			{
+				name:'id',
+				label: 'ID',
+				index: 'id',
+				formatter:'integer',
+				width: 40,
+				editable: false
+			},
+			{
+				name:'Property State',
+				label: 'Property State',
+				index: 'Property State',
+				width: 300,
+				editable: true,
+				editrules: {required: true}
+			},
+			{
+				name:'Property City',
+				label: 'Property City',
+				index: 'Property City',
+				width: 200,
+				editable: true,
+				editrules: {required: true}
+			},
+			{
+				name:'Property Country',
+				label: 'Property Country',
+				index: 'Property Country',
+				width: 200,
+				editable: true,
+				editrules: {required:true}
+			},
+			{
+				name:'Property Zip',
+				label: 'Property Zip',
+				index: 'Property Zip',
+				width: 80,
+				align: 'center',
+				editable: true,
+				editrules: {required: true}
+			},
+			{
+				name:'Origination Mortgagee/Sponsor Originator',
+				label: 'Org. Mortgagee',
+				index: 'Origination Mortgagee/Sponsor Originator',
+				width: 46,
+				align: 'center',
+				editable: true
+			},
+			{
+				name:'Originating Mortgagee Number',
+				label: 'Org. Mortgagee Number',
+				index: 'Originating Mortgagee Number',
+				editable: true,
+				editrules: {required: true}
+			},
+			{
+				name:'Sponsor Name',
+				label: 'Sponsor Name',
+				index: 'Sponsor Name',
+				width: 100,
+				editable: true,
+				editrules: {required: true}
+			},
+            {
+				name:'Sponsor Number',
+				label: 'Sponsor Number',
+				index: 'Sponsor Number',
+				width: 100,
+				editable: true,
+				editrules: {required: true}
+			},
+            {
+				name:'Down Payment Source',
+				label: 'Down Payment Source',
+				index: 'Down Payment Source',
+				width: 100,
+				editable: true,
+				editrules: {required: true}
+			},
+            {
+				name:'Product Type',
+				label: 'Product Type',
+				index: 'Product Type',
+				width: 100,
+				editable: true,
+				editrules: {required: true}
+			},
+            {
+				name:'Loan Purpose',
+				label: 'Loan Purpose',
+				index: 'Loan Purpose',
+				width: 100,
+				editable: true,
+				editrules: {required: true}
+			},
+            {
+				name:'Property Type',
+				label: 'Property Type',
+				index: 'Property Type',
+				width: 100,
+				editable: true,
+				editrules: {required: true}
+			},
+            {
+				name:'Interest Rate',
+				label: 'Interest Rate',
+				index: 'Interest Rate',
+				width: 100,
+				editable: true,
+				editrules: {required: true}
+			},
+            {
+				name:'Original Mortgage Amount',
+				label: 'Original Mortgage Amount',
+				index: 'Original Mortgage Amount',
+				width: 100,
+				editable: true,
+				editrules: {required: true}
+			},
+		],
+		caption: "Employee",
+		pager : '#pager',
+		height: 'auto',
+		ondblClickRow: function(id) {
+			jQuery(this).jqGrid('editGridRow', id, editOptions);
+		}
+	};
+
+	$("#grid")
+			.jqGrid(options)
+			.navGrid('#pager',
+			{}, //options
+			editOptions,
+			addOptions,
+			delOptions,
+			{} // search options
+	);
+
+});

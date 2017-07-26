@@ -31,7 +31,7 @@ var prepareItem = function(source) {
 };
 
 router.get('/', function(req, res, next) {
-    db.find(getClientFilter(req.query), function(err, items) {
+    db.find({}, function(err, items) {
         res.json(items);
     });
 });

@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Node.js Express REST-Service with JSGrid' });
+  res.render('index', { title: 'FHA insured Single Family Portfolio' });
 });
 
 module.exports = router;
