@@ -1,7 +1,7 @@
 {
-  "name": "JSGridExpressJSSample",
+  "name": "FhaMicroservice",
   "version": "1.0.0",
-  "description": "Sample project for jsGrid with Node.js Express REST service",
+  "description": "Node.js Express UI",
   "private": true,
   "scripts": {
     "prepublish": "zip -r target/Fha-UI-Microservice-dist.zip node_modules bin db public routes views *.js",
