@@ -203,11 +203,11 @@ $(function() {
 	$("#grid1")
 			.jqGrid(options)
 			.navGrid('#pager1',
-			{}, //options
+			{del:false,add:false,edit:false,search: false}, //options
 			editOptions,
 			addOptions,
 			delOptions,
 			{} // search options
-	);
+	).jqGrid('filterToolbar', {stringResult: true, searchOnEnter: true, defaultSearch: 'cn'});
 
 });
