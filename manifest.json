@@ -2,5 +2,5 @@
     "runtime": {
         "majorVersion": "0.12"
     },
-    "command": "npm start verbose=true" 
+    "command": "node ./bin/www verbose=true" 
 }
