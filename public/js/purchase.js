@@ -362,6 +362,7 @@ $(function() {
 				editrules: {required: true}
 			},
 		],
+        loadonce: true,
 		caption: "FHA data",
 		pager : '#pager',
 		height: 'auto',

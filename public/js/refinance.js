@@ -65,7 +65,7 @@ $(function() {
 		}
 	};
 
-	var URL = 'https://gs-rest-finaljkapp-gse00012261.apaas.us6.oraclecloud.com/purchase';
+	var URL = 'https://gs-rest-finaljkapp-gse00012261.apaas.us6.oraclecloud.com/refinance';
     //var URL = '/clients'
 	var options = {
 		url: URL,
@@ -192,6 +192,8 @@ $(function() {
 				editrules: {required: true}
 			},
 		],
+        
+        loadonce: true,
 		caption: "FHA data",
 		pager : '#pager1',
 		height: 'auto',
