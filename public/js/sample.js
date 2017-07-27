@@ -235,7 +235,7 @@ $(function() {
 		}
 	};
 
-	var URL = '/clients';
+	var URL = 'https://gs-rest-finaljkapp-gse00012261.apaas.us6.oraclecloud.com/purchase/45';
 	var options = {
 		url: URL,
 		editurl: URL,
@@ -249,17 +249,17 @@ $(function() {
 				editable: false
 			},
 			{
-				name:'Property State',
+				name:'propertyState',
 				label: 'Property State',
-				index: 'Property State',
+				index: 'propertyState',
 				width: 300,
 				editable: true,
 				editrules: {required: true}
 			},
 			{
-				name:'Property City',
+				name:'propertyCity',
 				label: 'Property City',
-				index: 'Property City',
+				index: 'propertyCity',
 				width: 200,
 				editable: true,
 				editrules: {required: true}
@@ -267,93 +267,93 @@ $(function() {
 			{
 				name:'Property Country',
 				label: 'Property Country',
-				index: 'Property Country',
+				index: 'propertyCounty',
 				width: 200,
 				editable: true,
 				editrules: {required:true}
 			},
 			{
-				name:'Property Zip',
+				name:'propertyZip',
 				label: 'Property Zip',
-				index: 'Property Zip',
+				index: 'propertyZip',
 				width: 80,
 				align: 'center',
 				editable: true,
 				editrules: {required: true}
 			},
 			{
-				name:'Origination Mortgagee/Sponsor Originator',
+				name:'sponsorOriginator',
 				label: 'Org. Mortgagee',
-				index: 'Origination Mortgagee/Sponsor Originator',
+				index: 'sponsorOriginator',
 				width: 46,
 				align: 'center',
 				editable: true
 			},
 			{
-				name:'Originating Mortgagee Number',
+				name:'mortgageNumber',
 				label: 'Org. Mortgagee Number',
-				index: 'Originating Mortgagee Number',
+				index: 'mortgageNumber',
 				editable: true,
 				editrules: {required: true}
 			},
 			{
-				name:'Sponsor Name',
+				name:'sponsorName',
 				label: 'Sponsor Name',
-				index: 'Sponsor Name',
+				index: 'sponsorName',
 				width: 100,
 				editable: true,
 				editrules: {required: true}
 			},
             {
-				name:'Sponsor Number',
+				name:'sponsorNumber',
 				label: 'Sponsor Number',
-				index: 'Sponsor Number',
+				index: 'sponsorNumber',
 				width: 100,
 				editable: true,
 				editrules: {required: true}
 			},
             {
-				name:'Down Payment Source',
+				name:'downpaymentSource',
 				label: 'Down Payment Source',
-				index: 'Down Payment Source',
+				index: 'downpaymentSource',
 				width: 100,
 				editable: true,
 				editrules: {required: true}
 			},
             {
-				name:'Product Type',
+				name:'productType',
 				label: 'Product Type',
-				index: 'Product Type',
+				index: 'productType',
 				width: 100,
 				editable: true,
 				editrules: {required: true}
 			},
             {
-				name:'Loan Purpose',
+				name:'loanPurpose',
 				label: 'Loan Purpose',
-				index: 'Loan Purpose',
+				index: 'loanPurpose',
 				width: 100,
 				editable: true,
 				editrules: {required: true}
 			},
             {
-				name:'Property Type',
+				name:'propertyType',
 				label: 'Property Type',
-				index: 'Property Type',
+				index: 'propertyType',
 				width: 100,
 				editable: true,
 				editrules: {required: true}
 			},
             {
-				name:'Interest Rate',
+				name:'interestRate',
 				label: 'Interest Rate',
-				index: 'Interest Rate',
+				index: 'interestRate',
 				width: 100,
 				editable: true,
 				editrules: {required: true}
 			},
             {
-				name:'Original Mortgage Amount',
+				name:'origMortgageAmount',
 				label: 'Original Mortgage Amount',
 				index: 'Original Mortgage Amount',
 				width: 100,
@@ -361,7 +361,7 @@ $(function() {
 				editrules: {required: true}
 			},
 		],
-		caption: "Employee",
+		caption: "FHA data",
 		pager : '#pager',
 		height: 'auto',
 		ondblClickRow: function(id) {

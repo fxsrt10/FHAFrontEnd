@@ -1,19 +1,2 @@
 
-  {
-    "id": 1,
-    "Property State": "ghfddgdfk",
-    "Property City": "dfgfddfgg",
-    "Property Country": "dfgdfddgd",
-    "Property Zip": "Ap #897-1459 Quam Avenue",
-    "Origination Mortgagee/Sponsor Originator": "ffhfhfffhfh",
-    "Originating Mortgagee Number": "jhgfd",
-    "Sponsor Name": "gffdgkhdhf",
-    "Sponsor Number": "gfgsdfj",
-    "Down Payment Source":"jhgshrhghdfh",
-    "Product Type": "gdsfgfg",
-    "Loan Purpose": "sgdskfd",
-    "Property Type": "gdgdfd",
-    "Interest Rate": "ghssg",
-    "Original Mortgage Amount":"hsgskg"
-      
-  }
+{"id":45,"propertyState":"jhgghfhd","propertyCity":null,"propertyCounty":null,"propertyZip":null,"sponsorOriginator":null,"mortgageNumber":null,"sponsorName":null,"sponsorNumber":null,"downpaymentSource":null,"nonProfitNumber":null,"productType":null,"loanPurpose":null,"propertyType":null,"interestRate":null,"origMortgageAmount":null,"endorsementYear":null,"endorsementMonth":null}
